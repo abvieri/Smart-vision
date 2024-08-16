@@ -1,0 +1,449 @@
+@import 'variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $Black;
+}
+
+nav,
+footer,
+.modal-header {
+    span {
+        width: 40px;
+        height: 40px;
+    }
+
+    a,
+    span,
+    h1 {
+        font-weight: bold;
+        background: $gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    img {
+        height: 40px;
+        border-radius: 100%;
+    }
+}
+
+#banner {
+    @include flex-center(column);
+    border-radius: 15px;
+
+    video {
+        width: 100%;
+        height: 80%;
+        border-radius: 15px;
+    }
+
+    h1 {
+        width: 100%;
+        font-weight: bold;
+        text-align: start;
+
+        @media screen and (min-width:$Tablet) {
+            display: none;
+        }
+    }
+
+    p {
+        font-weight: 400;
+
+        @media screen and (min-width:$Tablet) {
+            display: none;
+        }
+    }
+
+    .banner-inner {
+        @media screen and (min-width:$Mobile) {
+            width: 100%;
+        }
+
+        @media screen and (min-width:$LapTop) {
+            width: 80%;
+        }
+    }
+}
+
+#container-btn {
+    @include flex-center(row);
+
+    @media screen and (min-width:$Tablet) {
+        display: none;
+    }
+}
+
+#container-bt {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.container-btn {
+
+    button,
+    a {
+        width: 100%;
+        height: 40px;
+        border-radius: 30px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+        @media screen and (min-width:$Mobile) {
+            height: 45px;
+        }
+    }
+
+    a {
+        @include flex-center(row);
+        align-items: center;
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+        color: $White;
+
+        @media screen and (min-width:$Mobile) {
+            height: 45px;
+        }
+    }
+
+    .btn-info {
+        background-color: $Gray;
+        --bs-btn-active-bg: $Dark-grey;
+        --bs-btn-active-border-color: $Dark-grey;
+        border: 0;
+
+        &:hover {
+            background-color: $Dark-grey;
+        }
+    }
+
+    .btn-shop {
+        background: $gradient;
+        color: $White;
+        --bs-btn-active-bg: $Dark-grey;
+        --bs-btn-active-border-color: $Dark-grey;
+        border: 0;
+
+        &:hover {
+            color: $White;
+        }
+    }
+
+    svg {
+        width: 20px;
+    }
+}
+
+.accordion-item {
+    background-color: $Gray !important;
+    --bs-accordion-active-bg: none;
+    --bs-accordion-btn-focus-box-shadow: none;
+    border-radius: 16px !important;
+
+    button {
+        background-color: $Gray;
+        border-radius: 16px !important;
+    }
+
+    .accordion-button:not(.collapsed) {
+        font-weight: bold;
+        color: $Black;
+    }
+}
+
+#accordionFlush {
+    @media screen and (min-width:$Mobile) {
+        display: none;
+    }
+}
+
+#accordion {
+    font-size: small;
+    font-weight: 400;
+
+    .accordion-card {
+        @include flex-center(column);
+        width: 18rem;
+    }
+
+    svg {
+        width: 45px;
+        padding-top: 1rem;
+    }
+
+    @media screen and (max-width:$Mobile) {
+        display: none;
+    }
+
+    @media screen and (min-width:$Mobile) and (max-width:$Mobile-L) {
+        @include flex-center(column);
+
+        .accordion-card {
+            width: 25rem;
+        }
+
+        .row {
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+    }
+}
+
+#specification {
+    @include flex-center(column);
+    align-items: flex-start;
+
+    .span-fade {
+        @media screen and (min-width:$Mobile) {
+            display: none;
+        }
+    }
+
+    #table {
+        @media screen and (max-width:$Mobile) {
+            display: none;
+        }
+    }
+
+    h2 {
+        @media screen and (min-width:$Mobile-L) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    .container-btn {
+        @media screen and (min-width:$Mobile) {
+            margin-top: 1.5rem !important;
+        }
+
+        @media screen and (min-width:769px) {
+            display: none !important;
+        }
+    }
+}
+
+.reviews {
+
+    h2 {
+        @media screen and (min-width:$Mobile-L) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    p{
+        border-bottom: solid 1px $Gray;
+    }
+
+    .review {
+        display: flex;
+        align-items: flex-start;
+
+        span {
+            font-size: small;
+        }
+    }
+}
+
+footer {
+    @include flex-center(column);
+
+    span {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0 !important;
+    border: 0 !important;
+
+    .btn-close {
+        margin: 0 !important;
+    }
+
+    #modal-span {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+.modal-body,
+#container-info {
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        width: 100%;
+        text-align: start;
+    }
+
+    h3 {
+        text-align: start;
+    }
+
+    #payment-info {
+        display: flex;
+        flex-direction: column;
+        font-size: large;
+
+        span:first-child {
+            font-size: small;
+            color: $Gray
+        }
+
+        span:last-child {
+            font-size: small;
+        }
+    }
+
+    #modal-specification {
+        @include flex-center(column);
+        align-items: flex-start;
+        font-size: small;
+    }
+}
+
+.modal-footer {
+    border: 0 !important;
+
+    a {
+        width: 100%;
+        height: 40px;
+        border-radius: 30px;
+    }
+
+
+    .btn-shop {
+        background: $gradient;
+        color: $White;
+        --bs-btn-active-bg: $Dark-grey;
+        --bs-btn-active-border-color: $Dark-grey;
+        border: 0;
+
+        &:hover {
+            color: $White;
+        }
+    }
+
+    svg {
+        width: 20px;
+    }
+}
+
+#carouselExample {
+    width: 60%;
+
+    .container-info {
+        display: flex;
+    }
+}
+
+.product-container {
+    display: flex;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media screen and (max-width:$Tablet) {
+        display: none;
+    }
+
+    @media screen and (max-width:$LapTop) {
+        h1 {
+            font-size: large !important;
+        }
+
+        p {
+            font-size: small !important;
+        }
+
+        h2 {
+            font-size: x-large !important;
+        }
+    }
+
+    .product-images {
+        width: 100%;
+    }
+
+    .product-info {
+        align-self: center;
+    }
+
+    #carouselExample {
+        width: 100%;
+    }
+
+    .product-button {
+        display: flex;
+        align-items: center;
+        background: $gradient;
+        color: $White;
+        --bs-btn-active-bg: $Dark-grey;
+        --bs-btn-active-border-color: $Dark-grey;
+        border: 0;
+        border-radius: 30px;
+
+        &:hover {
+            color: $White;
+        }
+    }
+
+    svg {
+        width: 20px;
+    }
+
+    .product-info {
+        width: 80%;
+
+        h1 {
+            font-size: 24px;
+
+            @media screen and (max-width:$Tablet) {
+                display: none;
+            }
+        }
+    }
+
+    .product-price {
+
+        p {
+            font-size: 16px;
+            color: #777;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: bold;
+            display: flex;
+            align-items: flex-end;
+        }
+    }
+
+    .product-button {
+        display: block;
+        padding: 10px 20px;
+        border: none;
+        color: $White;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+    }
+}

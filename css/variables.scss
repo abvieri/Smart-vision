@@ -1,0 +1,26 @@
+//Tamanhos da Tela
+$Mobile: 425px;
+$Mobile-L: 580px;
+$Tablet: 768px;
+$LapTop: 1024px;
+$LapTop-L: 1440px;
+
+
+// Variáveis de Cores
+$Gray:#d9d9d9;
+$Dark-grey:#aaa;
+$White: #fff;
+$Magenta: #8c0061;
+$Purple: #5e0186;
+$Blue: #0052ff;
+$Black: #000;
+$gradient: linear-gradient(90deg, $Magenta 0%, $Purple 50%, $Blue 100%);
+
+
+// Mixins
+@mixin flex-center($direction){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
