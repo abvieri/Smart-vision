@@ -120,8 +120,8 @@ footer img,
   justify-content: center;
   align-items: center;
   align-items: center;
-  text-decoration: none;
-  text-align: center;
+  text-decoration: none!important;
+  text-align: center!important;
   width: 100%;
   color: #fff;
 }
